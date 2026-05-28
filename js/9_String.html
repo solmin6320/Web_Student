@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열연산과 자동형변환</title>
+    <script>
+        let txt1 = '아름다운';
+        let txt2 = '우리강산';
+        document.write(txt1 + txt2 + '<br>');
+
+        let txt3 = '은하철도';
+        let num1 = 999;
+        document.write(txt3 + num1 + '<br>');
+        // 문자열 + 정수형
+        // 이 경우 정수형이 문자열로 자동형변환
+        // '은하철도' + '999'
+
+        let num2 = 200;
+        let num3 = 300;
+        let txt4 = String(1000);
+        document.write(num2 + num3 + txt4 + '<br>');
+        // 200 + 300 + '1000'
+        // 500 + '1000'
+        // '500' + '1000'
+        // 5001000
+
+        let addText = '성일정보';
+        addText += '고등학교';
+        addText += '소프트웨어개발과';
+        document.write(addText);
+        // 복합 대입 연산자를 문자열에서도 쓸 수 있음
+        // 자바스크립트의 '기괴한 덧셈'과 타입스크릅티의 등장
+        // 자바스크립트는 200 + 300 + '1000'이 에러 없이 '5001000'으로 계산된다
+        // 쇼핑몰 결제 시스템에서 200원, 300원과 '1000'원 쿠폰을 썼을 때
+        // 총액이 5001000원이 나오면 큰 문제가 된다.
+        // -> 네이버, 카카오, 당근 등 대다수 IT기업에서는 자바스크립트의 허술한 타입
+        // 계산 오류를 원천 차단하기 이해, 타입스크립트를 사용한다.
+        // -> 타입스크립트에서는 숫자 변수에 문자열을 더하려고 하면 코드 에디터 단계에서
+        // 오류를 발생한다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

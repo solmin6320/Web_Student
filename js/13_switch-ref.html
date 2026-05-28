@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 매핑 스타일</title>
+</head>
+<body>
+    <h2 id="result-display">지역번호를 조회 중입니다....</h2>
+
+    <script>
+        const myArea = prompt('지역을 입력하세요', '서울');
+        const displayElement = document.querySelector('#result-display');
+
+        // 키(key)와 값(value) 형태로 지역번호 데이터셋을 깔끔하게 정의 (딕셔너리 구조)
+        const areaCodeMap = {
+            '서울': '02',
+            '경기도': '031',
+            '강원도': '033',
+            '부산': '051',
+        };
+
+        // 입력받은 지역명이 데이터셋에 존재하는지 확인
+        // areaCodeMap['서울']
+        // 서울을 areaCodeMap 의 key와 대조하여 존재하면 해당 key의 매핑된 value를 반환
+        // key가 존재하지 않은 지역일 경우 undefined를 반환
+        const areaNum = areaCodeMap[myArea];
+        
+        if (areaNum) {
+            displayElement.textContent = '${myArea}의 지역번호는 ${areaNum}입니다';
+        } else {
+            alert('등록되지 않은 지역입니다.');
+            displayElement.textContent = '조회 실패: 등록되지 않은 지역';
+        }
+    </script>
+</body>
+</html>

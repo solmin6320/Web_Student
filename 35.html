@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고정형 메뉴바</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        ul, li {
+            list-style: none;
+        }
+        a { text-decoration: none; color: #000;}
+
+        #header {
+            position: fixed;
+            width: 200px;
+            left: 50px;
+            top: 30px;
+            border: 3px solid red;
+        }
+        #header h1 {
+            font: 15px 굴림;
+            color: #123456;
+            font-weight: bold;
+
+        }
+        #header #gnb {
+            width: 150px;
+            margin: 10px 0;
+
+        }
+        #hedaer #gnb li a {
+            display: block;
+            background: #123456;
+            color: #fff;
+            padding: 5px;
+            font: 16px "Arial";
+
+        }
+        #header #gnb li a:hover {
+            background: #456789;
+        }
+        #container {
+            width: 300px;
+            height: 1500px;
+            margin-left: 260px;
+        }
+        #footer {
+            width: 550px;
+
+        }
+        #footer address {
+            font-style: normal;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <H1>뜨거운 웹 표준<br>시언하게 얼려드려요</H1>
+        <ul id="gnb">
+            <li><a href="#">COMPANY</a></li>
+            <li><a href="#">PRODUCT</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">COMMUNITY</a></li>
+        </ul>
+    </header>
+    <section id="container">
+        <p>본문내용</p>
+    </section>
+    <footer id="footer">
+        <address>Copyright Allright Reserved.</address>
+    </footer>
+</body>
+</html>

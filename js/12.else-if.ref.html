@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELSE IF 리팩토링</title>
+</head>
+<body>
+    <h2 id="grade-output">성적 산출 중...</h2>
+
+    <script>
+        // 데이터 형변환을 명확히 하고,
+        // 안전한 DOM 조작과 깔끔한 삼항 연산자를 적용한 현업 스타일 버전
+
+
+        const getSubGrade = (num) => (num % 10 === 9) ? '+' : '0';
+
+        const myGrade = Number(prompt('나의 컴퓨터 점수는?', '40'));
+        const outputElement = document.querySelector('#grade-output');
+
+        if (isNaN(myGrade) || myGrade > 100 || myGrade < 0) {
+            outputElement.textContent = '올바른 점수(0~100)을 입력해주세요';
+        } else if(myGrade === 100) {
+            outputElement.textContent = 'A+';
+        } else if(myGrade >= 90) {
+            outputElement.textContent = 'A' + getSubGrade(myGrade);
+        } else if(myGrade >= 80) {
+            outputElement.textContent = 'B' + getSubGrade(myGrade);
+        } else if(myGrade >= 70) {
+            outputElement.textContent = 'C' + getSubGrade(myGrade);
+        } else if(myGrade >= 60) {
+            outputElement.textContent = 'D' + getSubGrade(myGrade);
+        } else {
+            outputElement.textContent = 'F';
+        }
+    </script>
+</body>
+</html>

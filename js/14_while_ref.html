@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 반복문 스타일</title>
+</head>
+<body>
+    <div id="result-container"></div>
+
+    <script>
+        const container = document.querySelector('#result-container');
+
+        // 10부터 1까지의 숫자를 배열에 담아서 생성
+        const numbers = Array.from({length: 10}, (_, index) => 10-index);
+
+        // filter 짝수만 걸러내고, forEach를 이용해서 화면에 출력
+        numbers.filter(num => num % 2 === 0) // 10, 8, 6, 4, 2
+        .forEach(evenNum => container.insertAdjacentHTML('beforeend', '$(evenNum)<br>'));
+    </script>
+</body>
+</html>

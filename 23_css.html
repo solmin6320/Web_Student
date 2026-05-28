@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자와 텍스트 스타일링 실습</title>
+    <style>
+        p {color: blue; } 
+        /* 태그 선택자: 모든 <p> 태그의 글자색을 파란색으로 변경 */
+        #tea { color: red; }
+        /* ID선택자: id가 tea인 요소의 글자색을 빨간색으로 변경 */
+        .house { color: green; }
+        /* 클래스선택자: class가 house인 요소의 글자색을 초록색으로 변경 */
+        ul li { color: skyblue; }
+        /* 조상-자손 관계 */
+        ul>li>p { font-weight: bold; color: #000;}
+        /* 부모-자식 관계 */
+        * { font-family: 궁서;}
+        /* 전체선택자: 모든 요소의 글꼴을 궁서로 변경 */
+        h1+p { font-family:  돋움; color: yellow;}
+        /* 형제선택자: 바로 다음 형제 요소의 글꼴을 돋움으로 변경 */
+        h1+p+p { font-family: 굴림; color: pink; }
+        p[class] { color: hotpink; }
+        /* p태그 중 class 값을 갖고 있는 글씨색을 핫핑크로 변경 */
+        h1, h2, h3 { border-bottom: 1px solid #000 ; }
+        /* 다중선택: ,로 구분하여 다중 태그를 선택할 수 있음 */
+    </style>
+</head>
+<body>
+    <p>머리가 좋아지는 음식</p>
+    <p id="tea">건강에 좋은 차</p>
+    <p class="house">잠이 잘 오는 집</p>
+    <h2>입고신고쓰고끼는 것들..</h2>
+    <ul>
+        <li>옷</li>
+        <li>신발</li>
+        <li>안경</li>
+        <li>장갑</li>
+    </ul>
+    <h2>여행</h2>
+    <ul>
+        <li><p>7월의 추천 여행지</p></li>
+        <li>8월의 추천 여행지</li>
+        <li>9월의 추천 여행지</li>
+    </ul>
+    <h1>엑스포 안내</h1>
+    <p>책자를 배부하고 있습니다.</p>
+    <p>안내데스크를 활용하기 바랍니다</p>
+
+    <h3>3학년 소프트웨어개발과</h3>
+    <p>11반</p>
+    <p class="dojo">12반</p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복합 대입 연산자</title>
+    <script>
+        let num1 = 10;
+        let num2 = 20;
+
+
+        num1 += 5;
+        document.write(`${num1}<br>`);
+        num1 -= 5;
+        document.write(`${num1}<br>`);
+        num1*=5;
+        document.write(`${num1}<br>`);
+        num1/=5;
+        document.write(`${num1}<br>`);
+        num2 %= 3;
+        document.write(`${num2}<br>`);
+
+        // 복합 대입 연산자는 현업에서도 줄기차게 쓰이는 표준문법이다.
+        // 다만 실무에서 이 분법을 사용할 때 꼭 알아야 할 최신 트렌드이다
+        // 1. 무조건 줄여쓰면 안된다
+        // num1 += 5; 같은 수준은 모든 개발자가 직관적으로 이해하므로
+        // 무조건 줄여쓴다
+        // 다만 수식이 복잡하거나 연산자가 여럿 얽힐 때는 굳이 줄여쓰지 않는다
+        // 위와 같이 길게 풀어 쓰는 것이 오해를 줄이고 버그를 예방하는 지름길이
+        // 될 수도 있다.
+        // 2. 최신 자바스크립트 트렌드 : 논리 복합 대입 연산자
+        // 최신 자바스크립트에서는 사칙연산뿐만 아니라 참/거짓을 따지는 논리연산자
+        // 복합 대입이 가능해졌다
+        // 특히 리액트나 풀스택개발에서 데이터가 비어있는지 체크할 때 엄청 쓰인다.
+
+        // 현업에서 사용하는 예시
+        let userNickname = '';
+
+        // 사용자의 닉네임이 비어있으면 '게스트' 값을 대입한다.
+        userNickname ||= '게스트';
+        document.write(`${num2}<br>`);
+            </script>
+</head>
+<body>
+    
+</body>
+</html>

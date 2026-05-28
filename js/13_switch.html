@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch - case</title>
+    <script>
+        let myArear = prompt('지역을 입력하세요', '서울');
+        let areaNum;
+
+        switch(myArear) {
+            case '서울': 
+                areaNum = '02';
+                break;
+            case '경기도':
+                areaNum = '031';
+                break;
+            case '강원도':
+                areaNum = '033'
+                break
+            case '부산':
+                areaNum = '051'
+                break;
+            default :    
+                alert('등록되지 않은 지역입니다.');
+        }
+        document.write(myArear + '의 지역번호는 ' + areaNum + '입니다.');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

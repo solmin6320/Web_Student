@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수와 연산</title>
+    <script>
+        let firstNum = 100;
+        let nextNum = 2;
+        let result = firstNum + nextNum;
+            document.write(result);
+            console.log("계산 결과는 " + result);
+
+        var finalNum = 5;
+        result = result *5;
+
+
+
+        document.write(result);
+
+
+        // 자바스크립트에서 변수 선언은 let이나 var 키워드를 사용한다
+        // 다만 둘의 차이는 let은 변수만 선언할 수 있고
+        // var은 변수, 상수 상관없이 모두 선언할 수 있다.
+        // var을 사용하다 보니 자바스크립트가 아무리 자유로운 언어라 하더라도
+        // 상수와 변수는 구분할 필요성이 생김
+        // 그래서 변수는 let, 상수는 const 로 나눠서 사용한다
+        // 현업 개발자는 기본적으로 const로 변수를 생성하고
+        // 추후 값이 바뀌어야 하는 상황이 생기면 그 때 let으로 변경하는
+        // 방법을 많이 사용한다.
+
+
+        // Document.write() 대신 console.log() 사용을 권장한다
+        // 사용자 눈에 보이지 않지만, 개발자들끼리 시스템 내부를 들여다 볼 수 있는
+        // 일종의 '블랙박스 화면' 에 띄우는 방식이다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

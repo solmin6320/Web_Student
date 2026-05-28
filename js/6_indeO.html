@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>증감 연산자</title>
+    <script>
+        let num1 = 10;
+        let num2 = 20;
+        num1++;
+        document.write(`&{num1} <br>`);
+        num2--;
+        document.write(`&{num1} <br>`);
+        
+        // 기존 변수 값에 딱 1만 더하거나 빼서 값을 업데이트하는 아주
+        // 직관적인 연산자이다
+
+        // 전위 연산(++num), 후위 연산(num++) 명확히 구분
+        num1 = 10;
+        num2 = 10;
+        ++num1;
+        num2++;
+        document.write(`${a}<br>`);
+        document.write(`${a}<br>`);
+
+        let a = ++num1;
+        let b = num2++;
+        document.write(`${a}<br>`);
+        document.write(`${b}<br>`);
+        document.write(`${num1}<br>`);
+        document.write(`${num2}<br>`);
+
+        // let a = ++num1 : 전위연산은 num1에 1을 더한 다음에 a에 대입
+        // let b = num2++ : 후위연산은 num2를 b에 대입한 다음 num2에 1을 더함
+
+        // 현업에서는 한 줄에 대입과 증감 연산자를 동시에 섞어 쓰는 것을 기피한다.
+        // 동료 개발자가 코드를 읽을 때 헷갈려서 버그를 만들기 딱 좋은 코드이다.
+        // 실무에서는 무조건 이번 수업 코드처럼 num1++ 을 독립적인 한 줄로만
+        // 쓰는 것이 규칙이다
+        // 독립적으로 사용하면 앞이나 뒤나 효과가 똑같다
+
+        // 최근 모던 자바스크립트 생태계나 일부 대기업(Toss, Naver 등)의
+        // 엄격한 코드 스타일 가이드 에서는 ++와 -- 연산자의 사용 자체를
+        // 금지한다
+        // 증감 연산자는 자동으로, 세미콜론이 붙는 자바스크립트의 특성과 엮여 예상치
+        // 못한 버그를 만들 여지가 있고, 코드의 명확성을 해치기 때문이다.
+        // num++ 대신 num += 1 을 사용한다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

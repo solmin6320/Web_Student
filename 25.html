@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소 선택자</title>
+    <style>
+        .box::after {
+            content: "항목을 선택해주세요";
+            color: green;            
+        }
+        p::first-letter {
+            font-size: 300%;
+            color: red;
+        }
+        p { border-bottom: 1px dashed #000; }
+        p::last-child{ border: none; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>COMPANY</p>
+        <p>PRODUCT</p>
+        <p>SERVICE</p>
+    </div>
+</body>
+</html>

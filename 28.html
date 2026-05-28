@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션 메뉴 스타일</title>
+    <style>
+        /* reset */
+        * { margin: 0; padding: 0; }
+        ul, li { list-style: none; }
+        a { color: #000; }
+
+        body {
+            font: 12px 굴림;
+            margin: 20px;
+        }
+        #gnb li {
+            display: inline;
+        }
+        #gnb li a {
+            display: inline-block; /* a태그는 인라인 요소로 가로와 세로의 크기를 지정할 수 없기 때문에 블록요소의 성격을 강제로 부여하여 크기를 지정 */
+            width: 100px;
+            height: 50px;
+            background-color: #c00;
+            color: #fff;
+            text-align: center; /*텍스트 가로 가운데 정렬 */
+            line-height: 50px; /* 세로 가운데 정렬은 따로 없으며 줄간격(line-height)을 세로 크기와 동일하게 하면 가운데로 온다. */
+        }
+        #gnb li a:hover {
+            background-color: #369;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>주메뉴</h1>
+        <ul id="gnb">
+            <li><a href="#">COMPANY</a></li>
+            <li><a href="#">PRODUCT</a></li>
+            <li><a href="#">SERVICE</a></li>
+            <li><a href="#">COMMUNITY</a></li>
+        </ul>
+    </div>
+</body>
+</html>

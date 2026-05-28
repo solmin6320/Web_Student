@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러 줄 입력과 드롭다운 목록</title>
+</head>
+<body>
+    <h1>textarea 요소와 select 요소</h1>
+    <form action="bord.jsp" method="post">
+        <fieldset>
+            <legend>여러 글 줄상자와 목록상자</legend>
+            <p>
+                작성자
+                <input type="text" size="10">
+            </p>
+            <p>
+                답글<br>
+                <textarea name="reply" cols="30" rows="10"></textarea>
+            </p>
+            <p>
+                과목선택
+                <select>
+                    <option value="html5">HTML5</option>
+                    <option value="css3">CSS3</option>
+                    <option value="js">JavaScript</option>
+                    <option value="jq">jQuery</option>
+                </select> 
+            </p>
+            <p>성일정보고 IT과
+                <select name="" id="">
+                    <option value="none">반 선택</option>
+            <optgroup label="Ai게임콘텐츠과">
+                <option value="9">9반</option>
+                <option value="10">10반</option>
+                    </optgroup>
+            <optgroup label="소프트웨어개발과">
+                <option value="11">11반</option>
+                <option value="12">12반</option>
+                </optgroup>
+                </select>
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>

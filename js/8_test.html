@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형변환과  삼항연산자1</title>
+    <script>
+        let kor = Number(prompt('국어 점수는?', `0`));
+        // 1단계: 만약 프롬프트에 90을 입력했다면, 현재 kor 변수에는 '90'이 저장됨(문자열)
+        // 2단계: Number()를 사용하면 프롬프트에 입력된 값이 숫자타입으로 더장됨(정수형)
+        // Java로 치면, Integer.parseInt("90");
+
+        let eng = Number(prompt('영어 점수는?', `a`));
+        let math = Number(prompt('수학 점수는?', `a`));
+        let avg = (kor+eng+math)/3;
+        let result = avg >= 70 && kor >= 50 && eng >= 50 && math >= 50;
+
+        document.write((result===true) ? 'Pass' : 'Fail');
+        document.write(result ? 'Pass' : 'Fail');
+        // result 변수 자체가 이미 위에서 true 혹은 false라는 불리언 값을 가지고 있기 때문에
+        // 현업에서는 굳이 뒤에 == true 를 또 붙여서 비교하지 않는다
+        // result == true 하고 싶으면 그냥 result
+        // resut == false 하고 싶으면 !result 라고 쓰면 됨
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

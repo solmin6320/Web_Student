@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.write()</title>
+    <!-- 브라우저에게 여기서부터 HTML이 아니라 자바스크립트 엔진이 해석해야 하는 소크 코드라고 알려줌 -->
+    <Script>
+        document.write('Hello World!');
+        // document 객체 - 브라우저가 HTML 문서를 읽고 나면, 이를 제어할 수 있도록 만드는
+        // 만드는 하나의 거대한 '문서 객체(DOM)'이다.
+        // 우리가 눈으로 보고 있는 웹 페이지 화면 그 자체를 뜻한다고 보면 된다.
+
+        // document.write()는 복잡한 웹앱 등을 만들 때는 거의 사용하지 않는다.
+        // 페이지가 모두 로드된 후에 이 명령어가 실행되면 기존 HTML 내용을 전부 지워버리는
+        // 치명적인 단점이 있다.
+        // 현업에서는 HTML 에 공간을 미리 만들어 두고, textContent 나 innerHTML 같은 속성을
+        // 사용해 내용을 바꾸는 방식으로 사용된다.
+
+
+    </Script>
+</head>
+<body>
+    
+</body>
+</html>
