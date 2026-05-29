@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 구구단</title>
+</head>
+<body>
+    <div id="gugudan-container"></div>
+
+<script>
+    const container = document.querySelector('#gugudan-cotainer');
+    const dan = 2;
+
+    // 제목을 템플릿 리터럴로 생성
+    let htmlTemplate = '<h1>$(dan)단</h1>';
+
+    for (let i = 1; i<=9; i++) {
+            const result = dan * i;
+            // 하드코딩을 없애고 $(dan)을 넣어 데이터 일관성 유지
+            htmlTemplate += '$(dan) X $(i) = $(result)<br>';
+    }
+    // 루프까지 끝난 뒤 안전하게 단 한번만 DOM에 꽃아 넣기 (성능 최적화)
+    container.innerHTML = htmlTemplate;
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date() 객체</title>
+    <script>
+        document.write('<h1>현재 날짜/시간 정보</h1>');
+        let today = new Date();
+        let nowYear = today.getFullYear();
+        let nowMonth = today.getMonth() + 1; // 0~11로 받아오기 때문에 +1을 해줘야 함
+        let nowDate = today.getDate();
+        let nowDay = today.getDay(); // 0: 일요일 1: 월요일 ... 6: 토요일
+
+        let nowHours = today.getHours();
+        let nowMinutes = today.getMinutes();
+        let nowSeconds = today.getSeconds();
+
+        document.write('년 : ' + nowYear + '<br>');
+        document.write('월 : ' + nowMonth + '<br>');
+        document.write('일 : ' + nowDate + '<br>');
+        document.write('요일 : ' + nowDay + '<br>');
+        document.write('시 : ' + nowHours + '<br>');
+        document.write('분 : ' + nowMinutes + '<br>');
+        document.write('초 : ' + nowSeconds + '<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

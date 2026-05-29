@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 전체 구구단</title>
+</head>
+<body>
+    
+    <div id="gugudan-all"></div>
+
+    <script>
+        const container = document.querySelector('#gugudan-all');
+
+        let totalHtml = '';
+
+        for (let i = 2; i<=9; i++) {
+            totalHtml += `<h1>${i}단</h1>`;
+            
+            for (let j= 1; j<=9; j++) {
+                totalHtml += `${i} X ${j} = ${i * j}<br>`;
+            }
+        }
+        // 80번 화면을 그리는 대신, 메모리에서 다 완성된 대형 문자열을
+        // '딱 한번만 대입' (초고속 렌더링)
+        container.innerHTML = totalHtml;
+    </script>
+    </script>
+</body>
+</html>
