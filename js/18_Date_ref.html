@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 날짜/시간 정보</title>
+</head>
+<body>
+    <div id="clock-display"></div>
+
+
+<script>
+    const clockContainer = document.querySelector('#clock-display');
+    const today = new Date();
+
+    // 요일 배열 매핑 기법으로 코드 간소화
+    const krDays = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+    const nowDayH = krDays[today.getDate()];
+
+    const timeTemplate = `
+        <h1>현재 날짜/시간 정보</h1>
+        ${today.getFullYear()}년<br/>
+        ${today.getMonth() +1}월<br/>
+        ${today.getDate()}일<br/>
+        ${nowDayH}<br/>
+        ${today.getHours()}시<br/>
+        ${today.getMinutes()}분<br/>
+        ${today.getSeconds()}초<br/>
+        경과시간(타임스탬프) : ${today.getTime()}
+    `;
+    // getTime()
+    // - 1970년 1월 1일 00시 00분 00초를 기준으로 현재까지 경과한 시간을
+    // 밀리초(ms) 단위의 숫자로 변환
+    // 1. D-Day 계산: 종료일.getTime() - 시작일.getTime() 을 하면 두 날짜 사이에
+    // 흐른 밀리초가 계산이 된다. 이걸 필요한 단위로 환산해서 디데이 기능을 만든다.
+    // 2. 풀스택 데이터베이스 고유키: 타임스탬프는 1밀리초마다 숫자가 계속 증가하므로
+    // 중복되지 않은 고유한 ID 값을 만드는 가장 쉬운 방법이다
+
+    clockContainer.innerHTML = timeTemplate;
+</script>
+</body>
+</html>

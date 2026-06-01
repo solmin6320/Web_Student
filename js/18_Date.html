@@ -12,6 +12,33 @@
         let nowDate = today.getDate();
         let nowDay = today.getDay(); // 0: 일요일 1: 월요일 ... 6: 토요일
 
+        let nowDayH = null;
+        switch(nowDay) {
+            case 0:
+                nowDayH = '일요일';
+                break;
+            case 1:
+                nowDayH = '월요일';
+                break;
+            case 2:
+                nowDayH = '화요일';
+                break;
+            case 3:
+                nowDayH = '수요일';
+                break;
+            case 4:
+                nowDayH = '목요일';
+                break;
+            case 5:
+                nowDayH = '금요일';
+                break;
+            case 6:
+                nowDayH = '토요일';
+                break;
+                default:
+                    alert('잘못된 요일입니다.');
+        }
+
         let nowHours = today.getHours();
         let nowMinutes = today.getMinutes();
         let nowSeconds = today.getSeconds();
@@ -20,11 +47,12 @@
         document.write('월 : ' + nowMonth + '<br>');
         document.write('일 : ' + nowDate + '<br>');
         document.write('요일 : ' + nowDay + '<br>');
+        document.write('요일 : ' + nowDayH + '<br>');
         document.write('시 : ' + nowHours + '<br>');
         document.write('분 : ' + nowMinutes + '<br>');
         document.write('초 : ' + nowSeconds + '<br>');
     </script>
-</head>
+</head> 
 <body>
     
 </body>
