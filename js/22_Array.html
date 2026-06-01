@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체</title>
+    <script>
+        document.write('<h1>Array(배열)</h1>');
+
+        let name = new Array();
+        name[0] = '홍길동';
+        name[1] = '장발장';
+        name[2] = '로미오';
+        name[3] = '줄리엣';
+        document.write(name[3] + '<br>');
+
+        let days = new Array('일', '월', '화', '수', '목', '금', '토');
+        let tdate = new Date();
+        let today = days[tdate.getDay()];
+        document.write(today + '요일<br>');
+
+        let money = [100, 100, 200, 50, 500];
+        let total = 0;
+        let monlen = money.length;
+        for (let i = 0; i<monlen; i++) {
+            total += money[i];
+        }
+        document.write(total);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

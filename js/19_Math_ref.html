@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 Math 활용</title>
+</head>
+<body>
+    <div id="math-result"></div>
+
+    <script>
+        const resultContainer = document.querySelector('#math-result');
+
+        // 변수 데이터는 주로 배열 형태로 들어온다.
+        const numSeries = [30, 70, 5];
+
+        // 스프레드 연산자(...)를 활용해 배열 속 최대/최소값을 안전하게 추출
+        const maxNum = Math.max(...numSeries);
+        // Math.max(30, 70, 5)
+        const minNum = Math.min(...numSeries);
+
+        // Math.random()과 Math.floor()를 결합한 로또 번호 생성
+        const lottoCandidate = Math.floor(Math.random()*45) + 1;
+
+        // 백티 템플릿 이용
+        const mathTemplate = `
+            <h1>모던 수학 연산 결과</h1>
+            <p>배열 [${numSeries}] 중 <strong>최대값</strong>: ${maxNum}</p>
+            <p>배열 [${numSeries}] 중 <strong>최소값</strong>: ${minNum}</p>
+
+            <p>소수점 첫째자리 <strong>반올림(3.5)</strong>: ${Math.round(3.5)}</p>
+
+            <p>무작위 정수 난수 생성 (1~45 사이의 정수): <strong>${lottoCandidate}</strong> </p>
+        `;
+        resultContainer.innerHTML = mathTemplate;
+    </script>
+</body>
+</html>

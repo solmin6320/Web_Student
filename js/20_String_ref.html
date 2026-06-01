@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 문자열 가공</title>
+</head>
+<body>
+    
+    <div id="string-analysis"></div>
+
+
+    <script>
+        const container = document.querySelector('#string-analysis');
+        const originText = 'Sungil Information High School';
+
+        // 1. 비표준인 substr 대신 substring 이나 slice만 사용한다
+        const schoolName = originText.substring(7, 18); // idx 이상 idx 미만 사이의 문자열
+        const shortKey = originText.slice(7, 18); // 위와 동일
+        const words = originText.split(' ');
+        const firstWord = words[0];
+
+        // 백틱 템플릿
+        const reportTemplate = `
+            <h1>문자열 분석 리포트</h1>
+            <p><strong>원본 데이터: </strong> ${originText}</p>
+            <p><strong>글자수(공백포함): </strong> ${originText.length}</p>
+            <p><strong>대문자 변환:  </strong>${originText.toUpperCase()}</p>
+            <p><strong>단어 추출 (substring): </strong> ${schoolName}</p>
+            <p><strong>단어 추출: (slice) </strong>${shortKey}</p>
+            <p><strong>텍스트 치환 (replace):</strong> ${originText.replace('Information Hig', 'Middle')}/p>
+            <p><strong>공백 기준 첫 단어 추출: </strong> ${firstWord}</p>
+        `;
+        container.innerHTML = reportTemplate;
+    </script>
+</body>
+</html>

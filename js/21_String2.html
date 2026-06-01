@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 객체2</title>
+    <script>
+        document.write('<h3>문자치환</h3>');
+        let theText1 = 'img2_out.jpg';
+        document.write(theText1 + '<br>');
+        theText1 = theText1.replace('out', 'in');
+        document.write(theText1 + '<br>');
+
+        document.write('<h3>문자추출</h3>');
+        let theText2 = 'images/img10.jpg';
+        document.write(theText2 + '<br>');
+        theText2 = theText2.split('/')[1];
+        document.write(theText2 + '<br>');
+        theText2 = theText2.substring(3);
+        document.write(theText2 + '<br>');
+        theText2 = parseInt(theText2);
+        document.write(theText2 + '<br>');
+        // 10. jpg에 parseInt를 하면 숫자만 남아서 10이 리턴된다.
+        // 다만 img10 처럼 숫자가 아닌 문자로 시작하는 경우 error 발생한다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
