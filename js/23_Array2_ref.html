@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 스크립트 배열 조작 스타일</title>
+</head>
+<body>
+    
+    <div id="array-console"></div>
+    <script>
+        const display = document.querySelector('#array-console');
+        const originalName = ['유재석', '박명수', '정준하', '노홍철', '정형돈'];
+        const m1 = ['남산', '도봉산'];
+        const m2 = ['설악산', '지리산'];
+        const scoreList = [5, 10, 2, 25];
+
+        const scoreRank = [...scoreList].sort((a, b) => a-b);
+        
+        // 1. 원본을 건드리지 않고 안전하게 복사본을 만들어 역순 배열하기
+        const reversNames = [...originalName].reverse();
+        console.log(originalName);
+        console.log(reversNames);
+
+        // 2. concat 대신 모던 트렌드인 스프레드 연산자로 배열 병합
+        const totalMountains = [...m1, ...m2];
+        console.log(totalMountains);
+
+        // 3. slice는 그대로 사용
+        const slicedTeam = originalName.slice(2, 4);
+        console.log(slicedTeam);
+
+        // 4. join의 응용
+        const listHTML = `<li>${originalName.join('</li><li>')}</li>`;
+        // <li>유재석</li><li>박명수</li><li>정준하</li>
+
+        display.innerHTML = `
+            <h2>모던 배열 가공 리포트</h2>
+            <p><strong>스프레드 병합 배열: </strong>[${totalMountains.join(', ')}]</p>
+            <p><strong>추출된 팀원 목록: </strong>[${slicedTeam}]</p>
+            <p><strong>정렬된 스코어: </strong>${scoreRank}</p>
+            <h3>동적 생성된 연예인 명단 리스트</h3>
+            <ul>${listHTML}</ul>
+        `;
+
+        // sort() 주의할 점
+        // 자바스크립트의 기본 sort()는 숫자가 들어와도 강제로 문자열로 인식한다
+        // 그래서 숫자의 맨 앞글자를 기준으로 정렬하기 떄문에 원치 않는 결과가 나온다.
+    </script>
+</body>
+</html>

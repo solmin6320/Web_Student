@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체 활용2</title>
+    <script>
+        let theSubway = ['2호선', '9호선', '7호선', '4호선', '3호선'];
+        let newLine1 = '1호선';
+        let newLine2 = '분당선';
+
+        console.log(theSubway);
+        theSubway.shift(); // 왼쪽으로 밀기
+        console.log(theSubway);
+        theSubway.unshift(newLine1); // 오른쪽으로 밀기 & newLine1 삽입
+        console.log(theSubway);
+
+
+        theSubway.pop();
+        console.log(theSubway);
+        theSubway.push(newLine2);
+        console.log(theSubway);
+
+        // 자료구조의 기본: 스택과 큐
+        // 1) 스택(후입선출/LIFO): 브라우저의 '뒤로 가기', Ctrl+Z 기능을
+        // 구현할 때 사용
+        // 데이터를 넣을 때 push(), 꺼낼 때 pop()
+        // 2) 큐(선입선출/FIFO): 맛집 대기 줄이나 카카오톡 메시지 전송 시스템을
+        // 구현할 때 사용
+        // 데이터를 넣을 때 push(), 꺼낼 때 shift()
+        // 성능 최적화 관점 -> 뒷단 제어 선호함 -> 스택 구조 선호함
+        // 이유: push()나 pop()은 배열의 맨 뒤 공간만 사용하기 때문에 컴퓨터가
+        // 연산하기 아주 가볍고 빠르다.
+        // shift()나 unshift()는 맨 앞 공간을 건드리는 순간 뒤에 줄 서 있던
+        // 수백, 수천 개의 데이터들의 방 번호(인덱스)를 컴퓨터가 일일이 다 수정해서
+        // 밀고 당겨야 한다.
+        // 트렌드: 배열 맨 앞에 데이터를 추가해야 할 때는 원본을 파괴하는
+        // unshift() 대신 스프레드 연산자(...)을 활용한다.
+        // const 새배열 = [첫번째값, ...기존배열]
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

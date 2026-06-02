@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 배열 활용</title>
+</head>
+<body>
+    
+    <div id="array-dashboard"></div>
+    <script>
+        const dashboard = document.querySelector('#array-dashboard');
+
+        // 배열 선언은 무조건 대괄호[] 리터럴로 통일
+        const student = ['홍길동', '장발장', '로미오', '줄리엣'];
+        const krDays = ['일', '월', '화', '수', '목', '금', '토'];
+        const moneyList = [100, 100, 200, 50, 500];
+
+        // 날짜 연동 요일 추출
+        const currentDay = krDays[new Date().getDay()];
+
+        // 인덱스 루프(for) 대신 reduce 메서드를 안전하게 한 줄로 총합 구하기
+        const totalMoney = moneyList.reduce((sum, current) => sum + current, 0);
+
+        // 백틱 펨플릿
+        const template = `
+            <h1>모던 배열 데이터 리포트</h1>
+            <p><strong>출석부 마지막 학생: </strong>${student.at(-1)}</p>
+            <p><strong>실시간 요일 매핑: </strong>${currentDay}요일</p>
+            <p><strong>자금 목록: </strong>[${moneyList.join(', ')}]</p>
+            <p><strong>고차 함수(reduce) 기준 총합 금액: </strong>${totalMoney}원</p>
+        `;
+
+        dashboard.innerHTML = template;
+    </script>
+</body>
+</html>
