@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 리턴</title>
+    <script>
+        let num1 = 10;
+        function theFnc(num2) {
+            let sum = num1 + num2;
+            let nu1 = num1 * num2;
+
+            return sum;
+            document.write('return문 뒤에 실행문');
+        }
+        let result = theFnc(40);
+        document.write(result);
+
+
+        // return문의 두 가지 핵심 특성(값 반환, 함수 종료)
+        // 1. 값의 반환: 함수 내부의 지역 변수 sum에 담긴 계산 결과(50)를
+        //     함수 바깥 세상(theFnc(40) 자리)으로 휙 던져서 전달한다.
+        // 2. 함수 종료: return 명령어를 만나는 순간, 브라우저는 함수
+        // 내부의 남은 코드가 무엇이든 상관없이 그 즉시 함수를 셔터 내리듯
+        // 종료하고 빠져나간다
+        // document.write('return문 뒤에 실행문');
+        // 위의 코드는 절대 실행되지 않는다.
+        // Unreachoble Code, Dead Code 라고 부른다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

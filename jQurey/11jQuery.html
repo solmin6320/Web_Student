@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 화면 크기 측정</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+
+        .box {
+            width: 100%;
+            height: 50px;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+        .box2 {
+            background-color: green;
+        }
+        .box3 {
+            background-color: blue;
+        }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            // 1. 현재 브라우저 가로 너비
+            let w = $(window).width();
+            // 2. 현재 브라우저 세로 높이
+            let h = $(window).height();
+            
+            $('.box').height(h);
+        });
+    </script>
+</head>
+<body>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 스크롤 위치 감지</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            // 1. 윈도우(브라우저 창) 전체에 스크롤 이벤트 연결
+            $(window).scroll(function(){
+                // 현재 스크롤 바의 맨 위(top) 위치값을 픽셀(px)로 가져옴
+                let sct = $(window).scrollTop();
+
+                console.log(sct);
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수와 new 키워드</title>
+    <script>
+        function comFactory(cpuInfo, ramInfo, ssdInfo) {
+            this.cpu = cpuInfo;
+            this.ram = ramInfo;
+            this.ssd = ssdInfo;
+        
+        this.totInfo = function() {
+            document.write('제조업체: 삼성전자 <br>');
+            document.write('시스템종류: 64비트 운영체제 <br>');
+        }
+    }
+    let gamingCom = new comFactory('5.0GHZ', '32.0GB', '2TB');
+    document.write(gamingCom.cpu + '<br>');
+    document.write(gamingCom.ram + '<br>');
+    document.write(gamingCom.ssd + '<br>');
+    gamingCom.totInfo();
+
+    let officeCom = new comFactory('3.2GHZ', '16.0GB', '1TB');
+    document.write(officeCom.cpu + '<br>');
+    document.write(officeCom.ram + '<br>');
+    document.write(officeCom.ssd + '<br>');
+    officeCom.totInfo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

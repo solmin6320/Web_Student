@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 스크롤 구간 인터렉션</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        body {
+            height: 4000px;
+        }
+
+        #sct {
+            height: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            color: #fff;
+            font-size: 20px;
+            line-height: 100px;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+        }
+
+        .box1 {
+            background-color: aqua;
+            position: absolute;
+            top: 1000px;
+            opacity: 0;
+            left: -1000px;
+            transition: all 1s;
+        }
+
+        .box2 {
+            background-color: red;
+            position: absolute;
+            top: 2000px;
+            opacity: 0;
+            right: -100px;
+            transition: all 1s;
+        }
+
+        .box1.on {
+            left: 50%;
+            opacity: 1;
+        }
+        .box2.on {
+            right: 50%;
+            opacity: 1;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                let k = $(window).scrollTop();
+
+                $('#sct span').text(k);
+
+                if(k>=700 && k<=900) {
+                    $('.box1').addClass('on');
+                } else {
+                    $('.box1').removeClass('on');
+                }
+
+                if(k >= 1500 && k <= 1900) {
+                    $('.box2').addClass('on');
+                } else {
+                    $('.box2').removeClass('on');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="sct">현재 스크롤 위치는 : <span>0</span>px</div>
+
+
+
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+</body>
+</html>

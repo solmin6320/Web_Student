@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 이벤트 핸들링</title>
+</head>
+<body>
+    <button id="exit-btn">퇴장 버튼</button>
+
+    <script>
+        const exitButton = document.querySelector('#exit-btn');
+
+        const handleGreet = () => {
+            alert('안녕히가세요!');
+        }
+
+        exitButton.addEventListener('click', handleGreet);
+    </script>
+</body>
+</html>

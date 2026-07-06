@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수 (Parameter)</title>
+    <script>
+        // function hello() {
+        //     alert("반갑습니다");
+        // }
+        // function bye() {
+        //     alert("안녕히가세요");
+        // }
+
+
+        // 아래 함수에서 greet(theText) 괄호 안에 theText가
+        // 함수 내부에서 사용할 일종의 임시 변수인 매개변수이다.
+        // 매개변수를 파라미터라고도 한다.
+        function greet(theText) {
+            alert(theText);
+        }
+
+    </script>
+</head>
+<body>
+    <!-- <button onclick="hello()">만남</button>
+    <button onclick="bye()">이별</button> -->
+    <button onclick="greet('반갑습니다')"></button>
+    <button onclick="greet('안녕히가세요')"></button>
+    <!-- theText로 전달되는 반갑습니다. 안녕히사게요 같은 괄호 안에 구체적인 값을
+    인수라고 한다.
+    인수는 Argument(아규먼트) 라고 한다. -->
+</body>
+</html>

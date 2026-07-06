@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 애니메이션 제어</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        #box2 {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $('#rightBtn').click(function(){
+                $('#box2').stop().animate({left: '+=50px'}, 1000);
+            });
+            $('#leftBtn').click(function(){
+                $('#box2').clearQueue().animate({left: '-=50px'}, 1000);
+            });
+        });
+
+        // 애니메이션 누적 메모리가 생기는 이유 (큐 메모리)
+        // - 사용자가 버튼을 5번 연속으로 빠르게 클릭하면, 브라우저는 5번의 애니메이션 명령을
+        // '애니메이션 큐' 라는 대기실에 차례대로 쌓아둔다
+        // 이 때문에 연타를 치면 클릭을 멈추어도 대기실에 명령이 다 소진될 때까지
+        // 박스가 멈추지 않고 춤추듯 계속 움직이는 버그가 발생한다.
+        // 1. stop() 메서드
+        // - 현재 실행 중인 애니메이션을 그 즉시 일시 정지 시키고 다음 명령으로 넘어감
+        // - 실무 및 시험에서 가장 범용적으로 쓰이며, 특히 마우스 오버 메뉴를 만들 때
+        // 무조건 세트로 붙여야 한다
+        // 2. clearQueue() 메서드
+        // - 현재 진행 중인 애니메이션을 그대로 끝까지 두되, 뒤에 대기실에서 순서를
+        // 기다리던 예약 명령만 비운다
+        // - 진행 중인 동작이 툭 끊기는 느낌 없이 자연스럽게 마무리되기를 원할 때 주로 사용함 
+    </script>
+</head>
+<body>
+    <div id="box2">박스2</div>
+    <p>
+        <button id="leftBtn">LEFT</button>
+        <button id="rightBtn">RIGHT</button>
+    </p>
+</body>
+</html>

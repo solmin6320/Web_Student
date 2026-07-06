@@ -35,6 +35,16 @@
         const finalSubwayLine = [...unshiftedSubway, ...dbFetchedData];
         
         console.log(finalSubwayLine);
+
+        appContainer.innerHTML = `
+            <h2>실시간 모던 지하철 노선 대기열</h2>
+            <p><strong>기본 배차 노선: </strong>[${baseSubway.join(' -> ')}]</p>
+            <p><strong>맨 앞 노선 제외(shift 효과): </strong>[${shiftedSubway.join(' -> ')}]</p>
+            <p><strong>신규 1호선 전방 삽입(unshift 효과): </strong>[${unshiftedSubway.join(' -> ')}]</p>
+            <p><strong>백엔드 DB 누적 데이터(push): </strong>[${dbFetchedData.join(' -> ')}]</p>
+            <h3>최종 배차 완료 레이아웃</h3>
+            <p><strong>${finalSubwayLine.join(' -> ')}</strong></p>
+        `;
     </script>
 </body>
 </html>

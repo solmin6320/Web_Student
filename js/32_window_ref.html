@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 이벤트 통합 제어</title>
+</head>
+<body>
+    <button id="btn1" class="alert-trigger">버튼1</button>
+    <button id="btn2" class="alert-trigger">버튼2</button>
+
+    <script>
+            // 공통 실행 로직을 깔끔한 화살표 함수로 정의
+            const handleAlert = () => {
+                alert('모던 자바스크립트 표준 이벤트 발동')
+            }
+
+            // 모든 이미지 다운로드를 기다리지 않고 HTML 구조가 완성되면 즉시
+            // 자바스크립트 실행
+            document.addEventListener('DOMContentLoaded', () => {
+                const buttons = document.querySelectorAll('.alert-trigger');
+                buttons.forEach((btn) => {
+                    btn.addEventListener('click', handleAlert);
+                });
+                console.log('성공');
+            });
+    </script>
+</body>
+</html>

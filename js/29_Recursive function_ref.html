@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 재귀 함수 스타일</title>
+</head>
+<body>
+    <div id="print-zoon"></div>
+
+    <script>
+        const printZoon = document.querySelector('#print-zoon');
+
+        // 전역 변수를 쓰지않고 매개변수로 상태를 직접 조정
+        // maxLimit를 두어 스택 오버플로우를 원천 차단한다.
+        const recursiveGreet = (count, maxLimit) => {
+            // 기져조건: 탈출 조건을 맨 위에 배치
+            if (count > maxLimit) return;
+
+            // 로직 처리
+            printZoon.insertAdjacentHTML('beforend', `<p>안녕하세요${count}</p>`);
+
+            // 카운트 1 증가시켜 자신에게 배달(재귀 호출)
+            recursiveGreet(count + 1, maxLimit);
+        }
+
+        recursiveGreet(1, 10);
+    </script>
+</body>
+</html>

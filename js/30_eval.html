@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장함수</title>
+    <script>
+        let result = '10+20';
+        let result1 = eval('10+20');
+        document.write(result + '<br>');
+        document.write(result1 + '<br>');
+
+        let num = 100;
+        document.write('num' + 10 + '<br>');
+        document.write(eval('num') + 10 + '<br>');
+
+
+        let result2 = isNaN('031-720-1347');
+        document.write(result2);
+
+
+        // 1. eval
+        // - 괄호 안에 문자열로 된 스크립트 코드를 집어 넣으면, 
+        // 자바스크립트 엔진이 그 문자열을 실제 소스코드 코드로
+        // 마법처럼 파싱해서 그 자리에서 실행하라.
+
+        // 2. isNaN
+        // - Is Not a Number로 숫자가 아닌지 검사
+        // 숫자가 아니면 true, 숫자가 맞으면 false
+        // (강조) 현업에서 절대적인 금기 문법이 eval()
+        // 전세계 모든 자바스크립트 기술 문서와 가이드라인에서는 eval()
+        // 메서드의 사용을 100% 전면 금지하고 있다.
+        // 보안 크래시 -> sss 공격, 성능 저하
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

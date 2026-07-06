@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 클래스 활용</title>
+</head>
+<body>
+    <div id="computer-list"></div>
+    <script>
+        const container = document.querySelector('#computer-list');
+
+        // 복잡한 생성자 함수 대신 직관적인 class 표준 문법 사용
+        class ComputerBlueprint {
+            constructor(cpu, ram, ssd) {
+                this.cpu = cpu;
+                this.ram = ram;
+                this.ssd = ssd;
+            }
+
+            // 클래스 내부에 정의된 메서드는 자동으로 프로토타입으로 등록되어
+            // 메모리가 낭비되지 않는다 (최적화)
+            getsystemInfo() {
+                return '제조업체: 삼성전자 | 시스템: 64비트 OS';
+            }
+        }
+        const gamingCom = new ComputerBlueprint('5.0GHZ', '32.0GB', '2TB');
+        const officeCom = new ComputerBlueprint('3.2GHZ', '16.0GB', '1TB');
+
+        const computerCatelog = [gamingCom, officeCom];
+
+        let htmlBuffer = '<h2>모던 시스템 컴퓨터 카탈로그</h2>';
+
+        computerCatelog.forEach((com, index) => {
+            htmlBuffer += `
+            <div>
+                <h3>사양 스펙 #${index + 1}</h3>
+                <p><strong>CPU 성능: </strong>${com.cpu}</p>
+                <p><strong>RAM 성능: </strong>${com.ram}</p>
+                <p><strong>SSD 성능: </strong>${com.ssd}</p>
+                <small>${com.getsystemInfo()}</small>
+            </div>`;
+        });
+
+        container.innerHTML = htmlBuffer;
+    </script>
+</body>
+</html>

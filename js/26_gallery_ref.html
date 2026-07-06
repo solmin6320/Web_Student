@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #galleryWrap {
+            width: 600px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .nav-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .nav-btn img {
+            vertical-align: middle;
+        }
+        #gallery {
+            vertical-align: middle;
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="galleryWrap">
+        <h1>모던 이미지 슬라이더</h1>
+        <p>
+            <button id="prev-btn" class="nav-btn">
+                <img src="images/left_btn.png" alt="이전 그림">
+            </button>
+
+            <img src="images/img1.jpg" alt="갤러리 그림" id="gallery">
+            
+            <button id="next-btn" class="nav-btn">
+                <img src="images/right_btn.png" alt="다음 그림">
+            </button>
+        </p>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const galleryImages = [
+            'images/img1.jpg',
+            'images/img2.jpg',
+            'images/img3.jpg',
+            'images/img4.jpg',
+            'images/img5.jpg',
+            'images/img6.jpg',
+            'images/img7.jpg'
+        ];
+
+        const galleryTarget = document.querySelector('#gallery');
+        const prevBtn = document.querySelector('#prev-btn');
+        const nextBtn = document.querySelector('#next-btn');
+
+        // 사진을 바꿔주는 함수 분리 (유지보수성 향상)
+        const updateSlider = () => {
+            galleryTarget.src = galleryImages(currentIndex);
+        }
+
+        // 인라인 이벤트를 버리고 addEventListener와 화살표 함수 매핑
+        nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            if (currentIndex >= galleryImages.length) {
+                currentIndex = 0;
+            }
+            updateSlider();
+        })
+        prevBtn.addEventListener('click', () => {
+            currentIndex--;
+            if (currentIndex >= 0) {
+                currentIndex = galleryImages.length -1;
+            }
+            updateSlider();
+        })
+    </script>
+</body>
+</html>

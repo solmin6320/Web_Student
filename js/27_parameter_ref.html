@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 자바스크립트 데이터 속성 활용</title>
+</head>
+<body>
+    <button class="menu-btn"data-msg="반갑습니다! 성일정보고입니다.">만남</button>
+    <button class="menu-btn"data-msg="안녕히가세요! 다음에 또 만나요.">이별</button>
+
+    <script>
+        // 화살표 함수와 매개변수 기본값 제공
+        const displayalert = (theText = '기본 메시지입니다.') => {
+            alert(theText);
+        }
+
+
+        // 클래스명이 menu-btn 인 모든 버튼들을 배열 형태로 싹 긁어옴
+        const buttons = document.querySelectorAll('.menu-btn');
+
+        // 현업 표준 - 배열 고차 함수 forEach를 돌며 각 버튼에 이벤트 리스너를 통합 바인딩
+        buttons.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                const userMessage = e.target.dataset.msg;
+                displayalert(userMessage);
+            });
+        });
+    </script>
+
+</body>
+</html>
